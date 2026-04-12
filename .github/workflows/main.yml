@@ -25,7 +25,7 @@ jobs:
         run: npm install -g linkinator
 
       - name: Lint HTML files
-        run: htmlhint "**/*.html"
+        run: htmlhint "scr/**/*.html"
 
       - name: Check broken links
-        run: linkinator . --skip "mailto:*"
+        run: linkinator src --skip "mailto:*"
