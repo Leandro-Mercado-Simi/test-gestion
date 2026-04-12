@@ -1,12 +1,11 @@
 name: Validar HTML en cada Push
 
-# 1. Definir los eventos que activan el workflow
 on:
   push:
     branches:
       - main
-      - 'feature/*'
-      - 'dev-*'
+      - "feature/*"
+      - "dev-*"
   pull_request:
     branches:
       - main
@@ -16,16 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 2. Descargar el código del repositorio
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 3. Instalar HTMLHint
       - name: Install HTMLHint
         run: npm install -g htmlhint
 
-      # 4. Validar archivos HTML
+      - name: Install Linkinator
+        run: npm install -g linkinator
+
       - name: Lint HTML files
-        run: |
-          # Busca todos los archivos .html y los valida
-          htmlhint "**/*.html"
+        run: htmlhint "**/*.html"
+
+      - name: Check broken links
+        run: linkinator . --skip "mailto:*"
