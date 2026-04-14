@@ -1,0 +1,31 @@
+name: Validar HTML en cada Push
+
+on:
+  push:
+    branches:
+      - main
+      - "feature/*"
+      - "dev-*"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Install Linkinator
+        run: npm install -g linkinator
+
+      - name: Lint HTML files
+        run: htmlhint "scr/**/*.html"
+
+      - name: Check broken links
+        run: linkinator src --skip "mailto:*"
