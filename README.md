@@ -15,13 +15,19 @@
 
 ### Capturas de pantalla
 
-Resolucion de Conflictos:
+Resoluciones de Conflictos:
 
 ![Conflicto 1](docs/resolucion-conflicto-1.png)
 
+![Conflicto 2](docs/conflicto-3.jpeg)
+
 Merge final con solucion
 
-![Conflicto 2](docs/resolucion-conflicto-2.png)
+![Conflicto 1](docs/resolucion-conflicto-2.png)
+
+![Conflicto 2](docs/conflicto-1.jpeg)
+
+![Conflicto 2](docs/conflicto-2.jpeg)
 
 Action con falla y exitosa
 ![Action](docs/actions.png)
