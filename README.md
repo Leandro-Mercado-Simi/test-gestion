@@ -6,7 +6,8 @@
 
 - Mercado, Leandro
 - Ramirez, Rodrigo
-
+- Sevilla, Gonzalo
+  
 ### Tecnologias aplicadas
 
 - Git
